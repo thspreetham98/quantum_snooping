@@ -1,0 +1,8 @@
+notebook
+qiskit
+numpy
+scipy
+ipykernel
+matplotlib
+pylatexenc
+qiskit_ibm_provider
