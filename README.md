@@ -1,5 +1,12 @@
 # Quantum Snooping
 
+## Experiment - 1:
+### Aim
+1. Determine if crosstalk causes phase noise errors(Z-flips) or amplitude noise errors(X-flips).
+2. Determine how snooping time window effects our ability to detect CNOTs
+### Results
+TODO: waiting for results
+
 ## Questions to be answered
 
 - Is CNOT crosstalk causing X-flips or Z-flips?
