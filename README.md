@@ -4,19 +4,26 @@
 ### Aim
 1. Determine if crosstalk causes phase noise errors(Z-flips) or amplitude noise errors(X-flips).
 2. Determine how snooping time window effects our ability to detect CNOTs
+
+Note: acquire_alignment = 16 for IBM Lagos. Hence the delay durations are multiples of 16.
+
 ### Results
-TODO: waiting for results
+- Crosstalk causes significantly more phase noise errors than amplitude noise errors.
+- To observe these we need to fist perform a H-gate on the attack qubits and listen for CNOTs. Then, apply H-again before measuring to get the phase noise.
+- We also see that the time window cannot be too small. We can see significant noise starting from snooping durations 25% the size of the CNOT.
+
 
 ## Questions to be answered
 
-- Is CNOT crosstalk causing X-flips or Z-flips?
-- What if the CNOT happens in the middle of the snooping window?
-- How small can I make my window size and detect a CNOT?
-- Can I detect the start of a CNOT?
-- How much does distance effect crosstalk?
-- Can we make the window size very small and find the exact instance when the CNOT was started?
-- Can we use the CNOT gate durations to determine what CNOTs were applied?
-- Try windows smaller than 160dt?
+- [x] Is CNOT crosstalk causing X-flips or Z-flips?
+- [x] How small can I make my window size and detect a CNOT?
+- [ ] Can I detect the start of a CNOT?
+- [ ] What if the CNOT happens in the middle of the snooping window?
+- [ ] How much does distance effect crosstalk?
+- [ ] Can we make the window size very small and find the exact instance when the CNOT was started?
+- [ ] Can we use the CNOT gate durations to determine what CNOTs were applied?
+- [ ] Try windows smaller than 160dt?
+<!-- - Can we use [pulse gates](https://qiskit.org/documentation/tutorials/circuits_advanced/05_pulse_gates.html) to be more sensitve or disrupt other user's computation. -->
 
 
 ## TODO:
@@ -24,6 +31,7 @@ TODO: waiting for results
 1. Time windowed snooping with mid-circuit measurement to determine if there was a CNOT in that window.
 2. Discuss - Shots vs Repeat experiment for more data points. Do 100k shots - split into 20k random samples = 5 repetitions? This might help us run more experiments per job.
 3. config.channels??
+4. what is config.meas_levels?
 
 ## Future Experiment Ideas
 
