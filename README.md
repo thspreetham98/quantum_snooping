@@ -1,6 +1,6 @@
 # Quantum Snooping
 
-## Experiment - 1:
+## Experiment - 1
 ### Aim
 1. Determine if crosstalk causes phase noise errors(Z-flips) or amplitude noise errors(X-flips).
 2. Determine how snooping time window effects our ability to detect CNOTs
@@ -11,6 +11,10 @@ Note: acquire_alignment = 16 for IBM Lagos. Hence the delay durations are multip
 - Crosstalk causes significantly more phase noise errors than amplitude noise errors.
 - To observe these we need to fist perform a H-gate on the attack qubits and listen for CNOTs. Then, apply H-again before measuring to get the phase noise.
 - We also see that the time window cannot be too small. We can see significant noise starting from snooping durations 25% the size of the CNOT.
+
+## Experiment - 2
+### Aim
+Can we detect how many CNOTs are being applied in the same time window?
 
 
 ## Questions to be answered
