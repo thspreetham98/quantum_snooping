@@ -6,10 +6,11 @@ import tempfile
 import shutil
 
 
-def get_results_from_zip(job_id) -> Result:
+def get_results_from_zip(folder_path, job_id) -> Result:
+    zipfile_path = os.path.join(folder_path, 'job-{}.zip'.format(job_id))
     result_fname = '{}-result.txt'.format(job_id)
     temp_dir = tempfile.mkdtemp()
-    with zipfile.ZipFile('./results/job-{}.zip'.format(job_id), 'r') as zip_ref:
+    with zipfile.ZipFile(zipfile_path, 'r') as zip_ref:
         zip_ref.extractall(temp_dir)
     with open(os.path.join(temp_dir, result_fname)) as f:
         data = json.load(f)
