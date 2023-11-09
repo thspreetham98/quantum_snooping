@@ -30,8 +30,8 @@ def exp_1_diff_heatmap(attack_qubit_indices, delays, diff_percent_xs, diff_perce
     experiments = ['Delay {} dt'.format(i) for i in delays]
 
     # Generate random data for each experiment
-    data1 = np.array(diff_percent_xs)
-    data2 = np.array(diff_percent_zs)
+    data1 = np.abs(np.array(diff_percent_xs))
+    data2 = np.abs(np.array(diff_percent_zs))
 
     # Calculate the common data range for both heatmaps
     data_min = min(data1.min(), data2.min())
@@ -76,8 +76,8 @@ def exp_1_diff_heatmap(attack_qubit_indices, delays, diff_percent_xs, diff_perce
     cbar2 = fig.colorbar(heatmap2, ax=ax[1])
 
     # Set labels for the colorbars
-    cbar1.set_label('Percentage Difference in 1 counts')
-    cbar2.set_label('Percentage Difference in 1 counts')
+    cbar1.set_label('Abs. Perc. Difference in 1 counts')
+    cbar2.set_label('Abs. Perc. Difference in 1 counts')
 
     # Adjust the layout to prevent clipping of the labels
     plt.tight_layout()
